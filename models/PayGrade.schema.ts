@@ -2,7 +2,10 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
 
 @Schema({ timestamps: true })
-export class Paygrade extends Document {
+export class PayGrade extends Document {
+  @Prop({ required: true })
+  name: string;
+
   @Prop({ type: Types.ObjectId, ref: 'Position', required: true })
   position: Types.ObjectId;
 
@@ -25,4 +28,4 @@ export class Paygrade extends Document {
   status: string;
 }
 
-export const PaygradeSchema = SchemaFactory.createForClass(Paygrade);
+export const PaygradeSchema = SchemaFactory.createForClass(PayGrade);
