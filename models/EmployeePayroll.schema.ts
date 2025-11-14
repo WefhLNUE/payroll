@@ -6,6 +6,9 @@ export class EmployeePayroll extends Document {
   @Prop({ type: Types.ObjectId, ref: 'Employee', required: true })
   employeeId: Types.ObjectId; // reference to employee
 
+  @Prop({ required: true })
+  bankAccountNumber: string;
+
   @Prop({ type: Types.ObjectId, ref: 'Paygrade', required: true })
   paygrade: Types.ObjectId; // reference to paygrade
 
