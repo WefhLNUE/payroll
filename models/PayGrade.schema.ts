@@ -18,6 +18,12 @@ export class PayGrade extends Document {
   @Prop({ required: true })
   maxSalary: number;
 
+  @Prop({ default: 0 })
+  maxBonus: number;
+
+  @Prop({ default: 0 })
+  maxAllowances: number;
+
   @Prop({ required: true })
   baseSalary: number;
 
